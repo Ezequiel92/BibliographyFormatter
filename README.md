@@ -15,9 +15,7 @@ Simple clone or download the contents of this repository, replace the example .b
 To edit which fields and in which order they will appear, edit the variable `fields` in testing.jl. By default it is
 
 ```julia
-fields = [	"title", "author", "journal", 
-			"volume", "number", "pages", 
-			"year", "month", "url"]
+fields = ["title", "author", "journal", "volume", "number", "pages", "year", "month", "url"]
 ```
 
 If some fields don't exist in some source .bibtex, they will simply be ignored.
