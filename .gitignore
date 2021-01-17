@@ -1,3 +1,4 @@
 ## Bibliography files (bibtex/biblatex/biber):
+test_files/*
 *.bib
 *.bibtex
