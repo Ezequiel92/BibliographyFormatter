@@ -40,7 +40,7 @@ function format_name(name::String)::String
 	end
 
 	# Split the name by ' ' and '-'.
-	# Repalce every word by its first letter ending with a dot.
+	# Replace every word by its first letter ending with a dot.
 	elements = [[first(atom) * '.' for atom in split(word, '-')] for word in split(striped_name, ' ')]
 
 	# Construct the output, adding again the ' '  and '-'.
