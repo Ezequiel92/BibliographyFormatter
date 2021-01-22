@@ -8,6 +8,15 @@ Everything else about the formatting is opinionated, and to change it the code s
 - The testing script testing.jl shows how to use the `bib_formatter` function, how to import the script, and provides a sanity check, as it should run without errors. A small set of .bibtex files are provided in test_files/.
 - The dependencies are given by the Manifest.toml and Project.toml files.
 
+You should always check the end result for mistakes or missing data. The objetive of the script is to format the entries, so incorrect or invalid data may produce no warning.
+
+Some things to note:
+
+- It names every entry either `@article` and `@book` (when detects an isbn), so other types of entries will have to be renamed manually.
+- Only fields recognize by Bibliography.jl can be used, e.g. if the field `booktitle` is in the variable `fields` it will be ignored.
+- It formats every author's names to a single letter followed by a dot, e.g. Albert Einstein -> Einstein, A.
+- If a doi and url is present, the doi takes precedent over the url.
+
 ## Usage
 
 Simple clone or download the contents of this repository, replace the example .bibtex files in test_files/ with the ones you want to concatenate and run testing.jl. test_result.bibtex should now contain one entry per file in test_files/, correctly formatted.

@@ -107,7 +107,11 @@ function bib_formatter(fields::Array{String,1}, source_path::String)::String
 		# Constructs the entry name, {surname}{year}.
 		surname = new_bib[key].authors[1].last
 		year = new_bib[key].date.year
-		out_str *= "@article{" * surname * year * ",\n"
+		if "isbn" in fields
+			out_str *= "@book{" * surname * year * ",\n"
+		else
+			out_str *= "@article{" * surname * year * ",\n"
+		end
 
 		# Available fields.
 		available = keys(new_bib[key].fields)
@@ -126,8 +130,11 @@ function bib_formatter(fields::Array{String,1}, source_path::String)::String
 				end
 
 				# Add padding to the pages field.
-				if field == "pages"
-					new_bib[key].fields[field] = replace(new_bib[key].in.pages, "-" => " - ")
+                if field == "pages"
+                    numbers = filter(!isempty, strip.(split(new_bib[key].in.pages, "-")))
+                    if length(numbers) > 1
+                        new_bib[key].fields[field] = "$(numbers[1]) - $(numbers[2])"
+                    end
 				end
 
 				# Add fields to the string.

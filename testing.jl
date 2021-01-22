@@ -10,9 +10,11 @@ include("BiblographyFormatter.jl")
 ###########################
 
 # The order and which fields you put in here determines the final result.
-fields = [	"title", "author", "journal", 
-			"volume", "number", "pages", 
-			"year", "month", "url"]
+fields = [	"title", "author", "publisher", 
+            "address", "place", "collection",
+            "series", "edition", "journal", 
+            "volume", "number", "pages", 
+            "year", "month", "url", "isbn"]
 
 # Path to the source files.
 source_path = "test_files/"
