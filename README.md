@@ -1,5 +1,10 @@
 # BiblographyFormatter
 
+
+[![ForTheBadge built-with-science](http://ForTheBadge.com/images/badges/built-with-science.svg)](https://GitHub.com/Ezequiel92/)
+
+[![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat-square)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) ![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat-square)
+
 Julia script to join and format .bib and .bibtex files.
 
 - At the end, a single .bibtex file will be produced, with every entry present in the source files. 
