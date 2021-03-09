@@ -5,8 +5,8 @@ Julia script to join and format .bib and .bibtex files.
 - At the end, a single .bibtex file will be produced, with every entry present in the source files. 
 - Which fields and in which order, can be set by the user. Everything else about the formatting is opinionated, and to change it you need to edit the code.
 - This is a simple script inside a module. It defines two functions (only one of which is exported), and no data structures nor global variables.
-- The script example/example.jl shows how to import the main script, how to use the `bib_formatter` function and provides a sanity check, as it should run without errors when using the small set of .bibtex files provided in example/source_files/.
-- The dependencies are given by the Manifest.toml and Project.toml files.
+- The script `example/example.jl` shows how to import the main script, how to use the `bib_formatter` function and provides a sanity check, as it should run without errors when using the small set of .bibtex files provided in `example/source_files/`.
+- The dependencies are given by the `Manifest.toml` and `Project.toml` files.
 
 ### You should always check the end result for mistakes or missing data. The objective of the script is to format the entries, so incorrect or invalid data may produce no warning.
 
@@ -16,7 +16,7 @@ Julia script to join and format .bib and .bibtex files.
 - Only fields recognized by Bibliography.jl can be used, e.g. if the field `booktitle` is in the variable `fields`, it will be ignored.
 - It reformats every author's names to a single letter followed by a dot, e.g. Albert Einstein -> Einstein, A.
 - If a doi and an url are present, the doi takes precedent over the url.
-- The parser may get confused by special escaped symbols, i.e. {symbol}, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution, it should be able to display them directly given the correct configuration.
+- The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution, it should be able to display them directly given the correct configuration.
 
 ## Usage
 
@@ -47,7 +47,7 @@ fields = [
 
 If some fields don't exist in some source .bibtex, they will be ignored, unless they are essential like the year or the author.
 
-By editing `source_path` and `output_path` (in example/example.jl) you can change the source directory, and the location, name and format of the output file.
+By editing `source_path` and `output_path` (in `example/example.jl`) you can change the source directory, and the location, name and format of the output file.
 
 ## Documentation
 
