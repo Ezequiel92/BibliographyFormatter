@@ -32,7 +32,7 @@ fields = [
 ]
 
 # Path to the source files.
-source_path = joinpath(@__DIR__, "source_files/")
+source_path = joinpath(@__DIR__, "example_bib_files")
 
 # Path to the output file (if it already exists it will be overwritten).
 output_path = joinpath(@__DIR__, "output.bibtex")

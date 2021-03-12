@@ -1,3 +1,2 @@
-example/source_files/*
-*.bib
-*.bibtex
+example/*.bib
+example/*.bibtex
