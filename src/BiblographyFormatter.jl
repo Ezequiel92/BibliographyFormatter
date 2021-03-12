@@ -9,6 +9,10 @@ using Glob
 using DataStructures
 using Accessors
 
+if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
+    @eval Base.Experimental.@optlevel 3
+end
+
 """
 	format_name(name::String)::String
 
