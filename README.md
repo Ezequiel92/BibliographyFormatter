@@ -63,4 +63,4 @@ For an example on how to use the `bib_formatter` function refer to example/examp
 
 ## Warning
 
-This script is written for personal use and may break at any moment. So, no guaranties are given.
+This script is written as an exercise and may break at any moment. So, no guarantees are given.
