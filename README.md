@@ -33,7 +33,7 @@ To edit which fields will appear and in which order, edit the variable `fields` 
 ```julia
 fields = [
     "title",
-	"booktitle",
+    "booktitle",
     "author",
     "publisher",
     "address",
