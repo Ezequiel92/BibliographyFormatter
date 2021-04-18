@@ -16,7 +16,7 @@ end
 """
 	format_name(name::String)::String
 
-Format and clean the authors first and middle names.
+Format and clean the authors' first and middle names.
 
 Ignores leading and trailing white spaces and empty strings, and keeps 
 together words separated by '-'.
@@ -45,8 +45,8 @@ function format_name(name::String)::String
         return striped_name
     end
 
-    # Split the string when ' ' and '-' apears.
-    # Replace every word by its first letter ending with a dot.
+    # Split the string when ' ' and '-' appear.
+    # Replace every word with its first letter ending with a dot.
     elements = [
         [first(atom) * '.' for atom in split(word, '-')] for
         word in split(striped_name, ' ')
@@ -71,7 +71,7 @@ end
 
 # Arguments 
 - `fields::Array{String,1}`: Ordered list of bibtex fields to be included in each entry. 
-  If one field does not exist it will be ignored, unless they are essential like the year 
+  If one field does not exist it will be ignored unless they are essential like the year 
   or the author. The order of the fields will be respected in the final output.
 - `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
   entries in the output may not be the order of the files in the source directory.

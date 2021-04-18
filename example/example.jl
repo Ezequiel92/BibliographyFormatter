@@ -14,6 +14,7 @@ using BiblographyFormatter
 # If some non-essential fields do not exist, they will be ignored. 
 fields = [
     "title",
+	"booktitle",
     "author",
     "publisher",
     "address",
