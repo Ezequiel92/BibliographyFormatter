@@ -16,21 +16,21 @@ uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[BibInternal]]
-git-tree-sha1 = "53e7ea5ecba6699b4dd3d508768064237ecf3161"
+git-tree-sha1 = "3cdd672174e3bae099195cf949f21c1a9ded98e5"
 uuid = "2027ae74-3657-4b95-ae00-e2f7d55c3e64"
-version = "0.2.8"
+version = "0.2.9"
 
 [[BibParser]]
 deps = ["BibInternal", "DataStructures"]
-git-tree-sha1 = "7f60ae415c770e596e9ddfaf407dc6264941c768"
+git-tree-sha1 = "f915a6153e95ac660d162a5b7a3cbe2e80c43cd0"
 uuid = "13533e5b-e1c2-4e57-8cef-cac5e52f6474"
-version = "0.1.11"
+version = "0.1.14"
 
 [[Bibliography]]
 deps = ["BibInternal", "BibParser", "DataStructures"]
-git-tree-sha1 = "96d28e1118817725b776f2212f31503f218e9fce"
+git-tree-sha1 = "c3d1de7c7eaa693a7cce11b20ec6f896a4b8e44a"
 uuid = "f1be7e48-bf82-45af-a471-ae754a193061"
-version = "0.2.7"
+version = "0.2.8"
 
 [[Compat]]
 deps = ["Base64", "Dates", "DelimitedFiles", "Distributed", "InteractiveUtils", "LibGit2", "Libdl", "LinearAlgebra", "Markdown", "Mmap", "Pkg", "Printf", "REPL", "Random", "SHA", "Serialization", "SharedArrays", "Sockets", "SparseArrays", "Statistics", "Test", "UUIDs", "Unicode"]
