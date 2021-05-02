@@ -27,13 +27,13 @@ Julia script to format and join .bib and .bibtex files.
 * Clone the project
 
 ```bash
- git clone https://github.com/Ezequiel92/star_formation_models.git
+ git clone https://github.com/Ezequiel92/BiblographyFormatter.git
 ```
 
 * Go to the project directory
 
 ```bash
-cd path/to/star_formation_models
+cd path/to/BiblographyFormatter
 ```
 
 * Inside the Julia REPL install the dependencies specified by the `Manifest.toml` and `Project.toml` files
