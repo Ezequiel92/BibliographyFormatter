@@ -6,7 +6,7 @@
 
 Julia script to join and format .bib and .bibtex files.
 
-- As a result of running the script, a single .bibtex file will be produced, with every entry present in the source files. 
+- As a result of running the script, a single .bibtex file will be produced, cointaining every entry present within the source files. 
 - Which fields, and in which order, can be set by the user. Everything else about the formatting is opinionated, and to change it you need to edit the code.
 - The script `example/example.jl` shows how to import the main script, how to use the main function, and provides a sanity check, as it should run without errors when using the .bibtex files provided in `example/example_bib_files`.
 - The dependencies are given by the `Manifest.toml` and `Project.toml` files.
