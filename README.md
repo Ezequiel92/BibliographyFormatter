@@ -44,7 +44,7 @@ cd path/to/BiblographyFormatter
 (BiblographyFormatter) pkg> instantiate
 ```
 
-* Replace the example .bibtex files in `example/example_bib_files` with the ones you want to concatenate.
+* Replace the example .bibtex files in `example/example_bib_files` with the ones you want to format and join.
 
 * Run the example script
 
