@@ -62,6 +62,12 @@ Each function is documented within the script, where a docstring explains the fu
 
 For an example on how to use the `bib_formatter` function refer to `example/example.jl`.
 
+## 📣 Contact
+
+[![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lozano.ez@gmail.com)
+
+[![image](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:lozano.ez@outlook.com)
+
 ## ⚠️ Warning
 
 This script is written for personal use and may break at any moment. So, no guarantees are given.
