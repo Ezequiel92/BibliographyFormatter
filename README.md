@@ -20,7 +20,7 @@ Julia script to format and join .bib and .bibtex files.
 - If a DOI and an URL are present, the DOI takes precedent over the URL.
 - The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution with the correct configuration, it should be able to display them directly.
 
-### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data may produce no warning.
+### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning.
 
 ## 🛠️ Usage
 
