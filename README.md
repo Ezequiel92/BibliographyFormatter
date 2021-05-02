@@ -58,23 +58,10 @@ julia> include("example/example.jl")
 
     ```julia
     fields = [
-        "title",
-        "booktitle",
-        "author",
-        "publisher",
-        "address",
-        "place",
-        "collection",
-        "series",
-        "edition",
-        "journal",
-        "volume",
-        "number",
-        "pages",
-        "year",
-        "month",
-        "url",
-        "isbn",
+        "title", "booktitle", "author", "publisher", "address", 
+        "place", "collection", "series", "edition", "journal", 
+        "volume", "number", "pages", "year", "month",
+        "url", "isbn",
     ]
     ```
 
