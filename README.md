@@ -52,35 +52,35 @@ cd path/to/BiblographyFormatter
 julia> include("example/example.jl")
 ```
 
-The file `output.bibtex` should now contain every entry present on the source files, correctly formatted.
+* The file `output.bibtex` should now contain every entry present on the source files, correctly formatted.
 
-To edit which fields will appear and in which order, edit the variable `fields` in `example/example.jl`. By default, it is
+ * To change which fields will appear and in which order, edit the variable `fields` in `example/example.jl`. By default, it is
 
-```julia
-fields = [
-    "title",
-    "booktitle",
-    "author",
-    "publisher",
-    "address",
-    "place",
-    "collection",
-    "series",
-    "edition",
-    "journal",
-    "volume",
-    "number",
-    "pages",
-    "year",
-    "month",
-    "url",
-    "isbn",
-]
-```
+ ```julia
+ fields = [
+     "title",
+     "booktitle",
+     "author",
+     "publisher",
+     "address",
+     "place",
+     "collection",
+     "series",
+     "edition",
+     "journal",
+     "volume",
+     "number",
+     "pages",
+     "year",
+     "month",
+     "url",
+     "isbn",
+ ]
+ ```
 
-If some fields don't exist in some entries, they will be ignored, unless they are essential like the year or the author (in which case an error will be thrown.
+ * If some fields don't exist in some entries, they will be ignored, unless they are essential like the year or the author (in which case an error will be thrown.
 
-By editing `source_path` and `output_path` in `example/example.jl`, you can change the source directory and the location, name, and format of the output file.
+ * By editing `source_path` and `output_path` in `example/example.jl`, you can change the source directory and the location, name, and format of the output file.
 
 ## 📘 Documentation
 
