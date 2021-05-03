@@ -76,7 +76,7 @@ jobs:
       - run: rm -rf /tmp/manifest_updater
       - run: rm -rf Manifest.toml
       - run: chmod 600 Project.toml
-      - run: chmod 600 Manifest.*.toml
+      - run: chmod 600 Manifest.toml
       - run: git status
       - uses: peter-evans/create-pull-request@v3.8.2
         with:
