@@ -1,5 +1,6 @@
 name = "BiblographyFormatter.jl"
 uuid = "f73784c8-4474-425d-9f13-0d88a62d9fae"
+version = "1.0.0"
 
 [deps]
 Accessors = "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697"
