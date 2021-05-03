@@ -1,3 +1,6 @@
+name = "BiblographyFormatter.jl"
+uuid = "f73784c8-4474-425d-9f13-0d88a62d9fae"
+
 [deps]
 Accessors = "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697"
 Bibliography = "f1be7e48-bf82-45af-a471-ae754a193061"
