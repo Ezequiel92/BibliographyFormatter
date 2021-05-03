@@ -22,9 +22,9 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: x64
-      #- run: println("::set-output name=manifest_version::$(VERSION.major).$(VERSION.minor)")
-      #  shell: julia --color=yes {0}
-      #  id: manifest_version
+      - run: println("::set-output name=manifest_version::$(VERSION.major).$(VERSION.minor)")
+        shell: julia --color=yes {0}
+        id: manifest_version
       #- run: echo "We will update the manifest at Manifest.${{ steps.manifest_version.outputs.manifest_version }}.toml"
       #- run: rm -rf Manifest.toml
       #- run: |
