@@ -16,7 +16,6 @@ jobs:
       matrix:
         version:
           - '1'
-          - 'nightly'
     steps:
       - uses: actions/checkout@v2.3.4
       - uses: julia-actions/setup-julia@v1.6.0
