@@ -1,8 +1,8 @@
-# 📚 BiblographyFormatter.jl
+# 📚 BiblographyFormatter
 
 [![ForTheBadge made-with-julia](https://forthebadge.com/images/badges/made-with-julia.svg)](https://julialang.org)
 
-[![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat-square)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) [![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat-square)](mailto:lozano.ez@gmail.com) [![codecov.io](http://codecov.io/github/Ezequiel92/BiblographyFormatter/coverage.svg?branch=main)](http://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main)
+[![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat-square)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) [![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat-square)](mailto:lozano.ez@gmail.com) ![Codecov](https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat-square)
 
 Julia script to format and join .bib and .bibtex files.
 
