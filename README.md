@@ -26,7 +26,7 @@ Julia script to format and join .bib and .bibtex files.
 
 * Clone the project
 
-```bash
+```
  git clone https://github.com/Ezequiel92/BiblographyFormatter.git
 ```
 
