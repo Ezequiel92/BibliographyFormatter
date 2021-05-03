@@ -1,5 +1,5 @@
 name = "BiblographyFormatter.jl"
-uuid = "f73784c8-4474-425d-9f13-0d88a62d9fae"
+uuid = "25bb3d20-f979-476e-ac1c-c68045fa88c8"
 version = "1.0.0"
 
 [deps]
