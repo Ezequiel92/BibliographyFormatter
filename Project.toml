@@ -1,4 +1,4 @@
-name = "BiblographyFormatter"
+uuid = "00d4720e-de85-447b-9a70-f5d2eafe398c"
 
 [deps]
 Accessors = "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697"
