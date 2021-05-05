@@ -1,3 +1,4 @@
+name = "BiblographyFormatter"
 uuid = "00d4720e-de85-447b-9a70-f5d2eafe398c"
 
 [deps]
