@@ -83,4 +83,4 @@ For an example on how to use the main function `bib_formatter` refer to `example
 
 ## ⚠️ Warning
 
-This script is written for personal use and may break at any moment. So, no guarantees are given.
+This script is written for personal use and may break at any moment. So, use it at your own risk.
