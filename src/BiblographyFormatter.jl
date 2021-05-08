@@ -67,7 +67,7 @@ function format_name(name::String)::String
 end
 
 """
-	bib_formatter(source_path::String, fields::Array{String,1})::String
+	bib_formatter(source_path::String, fields::Array{String, 1})::String
 
 # Arguments 
 - `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
@@ -79,7 +79,7 @@ end
 # Returns
 - A String with the joined bib data, already formatted and ready to be printed in a file.
 """
-function bib_formatter(fields::Array{String, 1}, source_path::String)::String
+function bib_formatter(source_path::String, fields::Array{String, 1})::String
 
     # Import bibliography files from `source_path`.
     file_list = glob("*.bibtex", source_path)
