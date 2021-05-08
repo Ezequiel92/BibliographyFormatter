@@ -20,6 +20,6 @@ using BiblographyFormatter, Test, ReferenceTests
 	@test BiblographyFormatter.format_name("Albert Einstein") == "A. E."
 	
 	# Test main function
-	@test_reference "../example/output.bibtex" bib_formatter(fields, source_path)
+	@test_reference "../example/output.bibtex" bib_formatter(source_path, fields)
 
 end

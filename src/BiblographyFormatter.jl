@@ -67,14 +67,14 @@ function format_name(name::String)::String
 end
 
 """
-	bib_formatter(fields::Array{String,1}, source_path::String)::String
+	bib_formatter(source_path::String, fields::Array{String,1})::String
 
 # Arguments 
+- `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
+  entries in the output may not be the order of the files in the source directory.
 - `fields::Array{String,1}`: Ordered list of bibtex fields to be included in each entry. 
   If one field does not exist it will be ignored unless they are essential like the year 
   or the author. The order of the fields will be respected in the final output.
-- `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
-  entries in the output may not be the order of the files in the source directory.
 
 # Returns
 - A String with the joined bib data, already formatted and ready to be printed in a file.
@@ -160,6 +160,9 @@ function bib_formatter(fields::Array{String, 1}, source_path::String)::String
 
     return out_str
 end
+
+precompile(format_name, (String,))
+precompile(bib_formatter, (String, Array{String, 1},))
 
 export bib_formatter
 

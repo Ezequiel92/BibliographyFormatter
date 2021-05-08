@@ -42,7 +42,7 @@ output_path = joinpath(@__DIR__, "output.bibtex")
 # Formatting and output and saving the result in a file
 ############################################################################################
 
-final_bib = bib_formatter(fields, source_path)
+final_bib = bib_formatter(source_path, fields)
 
 open(output_path, "w") do file
     write(file, final_bib)
