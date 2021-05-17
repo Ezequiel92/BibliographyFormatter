@@ -2,7 +2,7 @@
 
 [![ForTheBadge made-with-julia](https://forthebadge.com/images/badges/made-with-julia.svg)](https://julialang.org)
 
-[![Codecov](https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F)](https://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/actions) [![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) [![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat)](mailto:lozano.ez@gmail.com)
+[![Codecov](https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F)](https://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/actions) [![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) [![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat)](mailto:elozano@df.uba.ar)
 
 Julia script to format and join .bib and .bibtex files.
 
@@ -74,12 +74,6 @@ julia> include("example/example.jl")
 Each function is documented within the script, where a docstring explains the functionality, the arguments, and the returns.
 
 For an example on how to use the main function `bib_formatter` refer to `example/example.jl`.
-
-## 📣 Contact
-
-[![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lozano.ez@gmail.com)
-
-[![image](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:lozano.ez@outlook.com)
 
 ## ⚠️ Warning
 
