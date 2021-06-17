@@ -1,8 +1,18 @@
-# 📚 BiblographyFormatter
+<div align="center">
+    <h1>📚 BiblographyFormatter</h1>
+</div>
 
-[![ForTheBadge made-with-julia](https://forthebadge.com/images/badges/made-with-julia.svg)](https://julialang.org)
+<p align="center">
+    <a href="https://julialang.org"><img src="https://forthebadge.com/images/badges/made-with-julia.svg"></a>
+</p>
 
-[![Codecov](https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F)](https://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/actions) [![GitHub](https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F)](https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE) [![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat)](mailto:elozano@df.uba.ar)
+<p align="center">
+        <a href="https://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main"><img src="https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F"></a>
+        <a href="https://github.com/Ezequiel92/BiblographyFormatter/actions"><img src="https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F"></a>
+        <a href="https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F"></a>
+        <a href="https://www.codefactor.io/repository/github/ezequiel92/biblographyformatter"><img src="https://img.shields.io/codefactor/grade/github/ezequiel92/biblographyformatter?style=flat&logo=CodeFactor&labelColor=2B2D2F"></a>
+      <a href="mailto:elozano@df.uba.ar"><img src="https://img.shields.io/maintenance/yes/2021?style=flat"></a>
+</p>
 
 Julia script to format and join .bib and .bibtex files.
 
