@@ -14,6 +14,10 @@
       <a href="mailto:elozano@df.uba.ar"><img src="https://img.shields.io/maintenance/yes/2021?style=flat"></a>
 </p>
 
+<p align="center">
+    <a href="https://open.vscode.dev/Ezequiel92/BiblographyFormatter"><img src="https://open.vscode.dev/badges/open-in-vscode.svg"></a>
+</p>
+
 Julia script to format and join .bib and .bibtex files.
 
 - As a result of running the script, a single .bibtex file will be produced, containing every entry present within the source files. 
