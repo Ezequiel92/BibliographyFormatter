@@ -68,7 +68,7 @@ end
 
 
 """
-month_replace(month::String)::String
+    month_replace(month::String)::String
 
 Replaces the name of the month with its corresponding number.
     

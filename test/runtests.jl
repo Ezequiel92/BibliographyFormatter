@@ -18,6 +18,11 @@ using BiblographyFormatter, Test, ReferenceTests
 	@test BiblographyFormatter.format_name("Cena-Rock") == "C.-R."
 	@test BiblographyFormatter.format_name("Cena-Rock McMahon") == "C.-R. M."
 	@test BiblographyFormatter.format_name("Albert Einstein") == "A. E."
+
+    # Test month convertion
+	@test BiblographyFormatter.month_replace("jan") == "01"
+	@test BiblographyFormatter.month_replace("Dec.") == "12"
+	@test BiblographyFormatter.month_replace(" May") == "05"
 	
 	# Test main function
 	@test_reference "../example/output.bibtex" bib_formatter(source_path, fields)
