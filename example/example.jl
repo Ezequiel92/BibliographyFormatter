@@ -10,7 +10,7 @@ using BiblographyFormatter
 # Configuration variables
 ############################################################################################
 
-# Which fields will appear in the end result. The order will be respected
+# Which fields will appear in the end result. The order indicated here will be respected
 # If some non-essential fields don't exist in the source files, they will be ignored
 fields = [
     "title",
@@ -39,7 +39,7 @@ source_path = joinpath(@__DIR__, "example_bib_files")
 output_path = joinpath(@__DIR__, "output.bibtex")
 
 ############################################################################################
-# Formatting and output and saving the result in a file
+# Formatting and saving the result in a file
 ############################################################################################
 
 final_bib = bib_formatter(source_path, fields)
