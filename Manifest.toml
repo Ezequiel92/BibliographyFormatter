@@ -40,21 +40,21 @@ version = "0.3.0"
 
 [[BibParser]]
 deps = ["BibInternal", "DataStructures"]
-git-tree-sha1 = "9a5f851504682eb7712cf4078be05246e7a57d71"
+git-tree-sha1 = "a8890e709d452d2aa378ed3fa7235e1054a02751"
 uuid = "13533e5b-e1c2-4e57-8cef-cac5e52f6474"
-version = "0.1.17"
+version = "0.1.18"
 
 [[Bibliography]]
 deps = ["BibInternal", "BibParser", "DataStructures"]
-git-tree-sha1 = "5d1cc36d092a1996854662e2552d3d7fd495ea29"
+git-tree-sha1 = "9ddfae2c660040aa866ae2a3d355d2d9d0ee61ef"
 uuid = "f1be7e48-bf82-45af-a471-ae754a193061"
-version = "0.2.14"
+version = "0.2.15"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "0b0aa9d61456940511416b59a0e902c57b154956"
+git-tree-sha1 = "f53ca8d41e4753c41cdafa6ec5f7ce914b34be54"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "0.10.12"
+version = "0.10.13"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
