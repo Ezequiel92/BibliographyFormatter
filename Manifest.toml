@@ -46,9 +46,9 @@ version = "0.2.17"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "3533f5a691e60601fe60c90d8bc47a27aa2907ec"
+git-tree-sha1 = "f885e7e7c124f8c92650d61b9477b9ac2ee607dd"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "1.11.0"
+version = "1.11.1"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -308,9 +308,9 @@ uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[OffsetArrays]]
 deps = ["Adapt"]
-git-tree-sha1 = "c0e9e582987d36d5a61e650e6e543b9e44d9914b"
+git-tree-sha1 = "043017e0bdeff61cfbb7afeb558ab29536bbb5ed"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
-version = "1.10.7"
+version = "1.10.8"
 
 [[OpenLibm_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -335,9 +335,9 @@ version = "0.5.10"
 
 [[Parsers]]
 deps = ["Dates"]
-git-tree-sha1 = "d911b6a12ba974dabe2291c6d450094a7226b372"
+git-tree-sha1 = "ae4bbcadb2906ccc085cf52ac286dc1377dceccc"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.1.1"
+version = "2.1.2"
 
 [[Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -368,9 +368,9 @@ version = "1.2.2"
 
 [[ReferenceTests]]
 deps = ["DeepDiffs", "Distances", "FileIO", "ImageCore", "ImageInTerminal", "Random", "SHA", "Test"]
-git-tree-sha1 = "2685c2a66e3f21a02ab0903f7e3e972b1bbf4385"
+git-tree-sha1 = "98d9db9135a79fe5e66b14a0c2469a897c0edb64"
 uuid = "324d217c-45ce-50fc-942e-d289b448e8cf"
-version = "0.9.8"
+version = "0.9.9"
 
 [[Requires]]
 deps = ["UUIDs"]
