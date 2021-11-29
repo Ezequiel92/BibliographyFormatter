@@ -64,9 +64,9 @@ version = "0.11.0"
 
 [[ColorVectorSpace]]
 deps = ["ColorTypes", "FixedPointNumbers", "LinearAlgebra", "SpecialFunctions", "Statistics", "TensorCore"]
-git-tree-sha1 = "45efb332df2e86f2cb2e992239b6267d97c9e0b6"
+git-tree-sha1 = "3f1f500312161f1ae067abe07d13b40f78f32e07"
 uuid = "c3611d14-8923-5661-9e6a-0046d554d3a4"
-version = "0.9.7"
+version = "0.9.8"
 
 [[Colors]]
 deps = ["ColorTypes", "FixedPointNumbers", "Reexport"]
@@ -403,9 +403,9 @@ uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[SpecialFunctions]]
 deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
-git-tree-sha1 = "f0bccf98e16759818ffc5d97ac3ebf87eb950150"
+git-tree-sha1 = "e08890d19787ec25029113e88c34ec20cac1c91e"
 uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
-version = "1.8.1"
+version = "2.0.0"
 
 [[StackViews]]
 deps = ["OffsetArrays"]
