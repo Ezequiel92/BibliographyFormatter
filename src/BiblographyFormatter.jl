@@ -38,18 +38,18 @@ julia> format_name("Cena-Rock McMahon")
 function format_name(name::String)::String
 
     # Clean leading and trailing white spaces
-    striped_name = strip(name)
+    clean_name = replace(replace(replace(strip(name), "{" => ""), "}" => ""), "~" => " ")
 
     # If the string is empty or already correctly formatted, returned it unchanged
-    if isempty(striped_name) || match(r"[A-Z]\.", striped_name) !== nothing
-        return striped_name
+    if isempty(clean_name) || match(r"[A-Z]\.", clean_name) !== nothing
+        return clean_name
     end
 
     # Split the string when ' ' and '-' appear
     # Replace every word with its first letter ending with a dot
     elements = [
         [first(atom) * '.' for atom in split(word, '-')] for
-        word in split(striped_name, ' ')
+        word in split(clean_name, ' ')
     ]
 
     # Construct the output, adding again the ' ' and '-'
@@ -123,6 +123,36 @@ function month_replace(month::String)::String
 end
 
 """
+    journal_replace(journal::String)::String
+
+Replaces the abbreviated name of a journal with its full name.
+    
+# Arguments 
+- `journal::String`: Name of the journal as a string.
+
+# Returns
+- The corresponding full name as a string. 
+
+# Example
+```julia-repl
+julia> month_replace("\apj")
+"The Astrophysical Journal"
+```
+"""
+function journal_replace(journal::String)::String
+
+    j_name = strip(lowercase(journal))
+
+    if j_name == "\\apj" || j_name == "apj"
+        return "The Astrophysical Journal"
+    else
+        return journal
+    end
+
+end
+
+
+"""
 	bib_formatter(source_path::String, Vector{String})::String
 
 # Arguments 
@@ -156,6 +186,7 @@ function bib_formatter(source_path::String, fields::Vector{String})::String
         for (i, author) in enumerate(new_bib[key].authors)
             author = @set author.first = format_name(author.first)
             author = @set author.middle = format_name(author.middle)
+            author = @set author.last = replace(replace(author.last, "{" => ""), "}" => "")
             new_bib[key].authors[i] = @set author.junior = format_name(author.junior)
         end
     end
@@ -172,17 +203,17 @@ function bib_formatter(source_path::String, fields::Vector{String})::String
         # Deletes empty fields.
         filter!(field -> !isequal(field[2], ""), new_bib[key].fields)
 
+        # Available fields
+        available = keys(new_bib[key].fields)
+
         # Constructs the entry name as {surname}{year}
         surname = new_bib[key].authors[1].last
         year = new_bib[key].date.year
-        if "isbn" in fields
+        if "isbn" in available
             out_str *= "@book{" * surname * year * ",\n"
         else
             out_str *= "@article{" * surname * year * ",\n"
         end
-
-        # Available fields
-        available = keys(new_bib[key].fields)
 
         # Constructs the correct URL from the "doi" field if possible
         if "doi" in available
@@ -202,6 +233,11 @@ function bib_formatter(source_path::String, fields::Vector{String})::String
                 # Set the month as a number
                 if field == "month"
                     new_bib[key].fields[field] = month_replace(new_bib[key].fields[field])
+                end
+
+                # Replace journal abbreviations with full name
+                if field == "journal"
+                    new_bib[key].fields[field] = journal_replace(new_bib[key].fields[field])
                 end
 
                 # Add padding to the pages field
