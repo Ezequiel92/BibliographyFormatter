@@ -145,12 +145,13 @@ function journal_replace(journal::String)::String
 
     if j_name == "\\apj" || j_name == "apj"
         return "The Astrophysical Journal"
+    elseif j_name == "\\aap" || j_name == "aap"
+        return "Astronomy and Astrophysics"
     else
         return journal
     end
 
 end
-
 
 """
 	bib_formatter(source_path::String, Vector{String})::String
@@ -170,6 +171,10 @@ function bib_formatter(source_path::String, fields::Vector{String})::String
     # Import bibliography files from `source_path`
     file_list = glob("*.bibtex", source_path)
     append!(file_list, glob("*.bib", source_path))
+
+    if isempty(file_list)
+        @error("No .bib or .bibtex files could be found, check the source path.")
+    end
 
     # Initialize new_bib with the last entry
     new_bib = import_bibtex(pop!(file_list))
@@ -267,6 +272,7 @@ end
 
 precompile(format_name, (String,))
 precompile(month_replace, (String,))
+precompile(journal_replace, (String,))
 precompile(bib_formatter, (String, Vector{String}))
 
 export bib_formatter

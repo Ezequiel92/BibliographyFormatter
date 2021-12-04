@@ -32,6 +32,7 @@ Julia script to format and join .bib and .bibtex files.
 - Only fields recognized by [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) can be used, i.e. if a field in the variable `fields` is not recognized, it will be ignored.
 - It reformats every author's first name to a single letter followed by a dot, e.g. Albert Einstein -> Einstein, A.
 - If a DOI and an URL are present, the DOI takes precedent over the URL.
+- If there is more than one entry with the same first author and the same year, the key will be the same. This has to be corrected manually.
 - The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution with the correct configuration, it should be able to display them directly without the curly brackets.
 - [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) will get confused if there is an space after `@article`, i.e. the entry stars as "@article {Author2025", and the entry will be ignored. Delete the spurious spaces manually.
 
