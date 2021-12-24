@@ -40,19 +40,19 @@ Julia script to format and join .bib and .bibtex files.
 
 ## 🛠️ Usage
 
-* Clone the project
+- Clone the project
 
-```
+```bash
  git clone https://github.com/Ezequiel92/BiblographyFormatter.git
 ```
 
-* Go to the project directory
+- Go to the project directory
 
 ```bash
 cd path/to/BiblographyFormatter
 ```
 
-* Inside the Julia REPL install the dependencies specified by the `Manifest.toml` and `Project.toml` files
+- Inside the Julia REPL install the dependencies specified by the `Manifest.toml` and `Project.toml` files
 
 ```julia
 (@v1.6) pkg> activate .
@@ -60,17 +60,17 @@ cd path/to/BiblographyFormatter
 (BiblographyFormatter) pkg> instantiate
 ```
 
-* Replace the example .bibtex files in `example/example_bib_files` with the ones you want to format and join.
+- Replace the example .bibtex files in `example/example_bib_files` with the ones you want to format and join.
 
-* Run the example script
+- Run the example script
 
 ```julia
 julia> include("example/example.jl")
 ```
 
-* The file `output.bibtex` should now contain every entry present on the source files, correctly formatted.
+- The file `output.bibtex` should now contain every entry present on the source files, correctly formatted.
 
-    * To change which fields will appear and in which order, edit the variable `fields` in `example/example.jl`. By default, it is
+  - To change which fields will appear and in which order, edit the variable `fields` in `example/example.jl`. By default, it is
 
     ```julia
     fields = [
@@ -81,9 +81,9 @@ julia> include("example/example.jl")
     ]
     ```
 
-    * If some fields don't exist in some entries, they will be ignored, unless they are essential like the year or the author (in which case an error will be thrown).
+  - If some fields don't exist in some entries, they will be ignored, unless they are essential like the year or the author (in which case an error will be thrown).
 
-    * By editing `source_path` and `output_path` in `example/example.jl`, you can change the source directory and the location, name, and format of the output file.
+  - By editing `source_path` and `output_path` in `example/example.jl`, you can change the source directory and the location, name, and format of the output file.
 
 ## 📘 Documentation
 
