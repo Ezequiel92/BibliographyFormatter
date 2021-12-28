@@ -20,7 +20,7 @@
 
 Julia script to format and join .bib and .bibtex files.
 
-- As a result of running the script a single .bibtex file will be produced, containing every entry present within the source files. 
+- As a result of running the script a single .bibtex file will be produced, containing every entry present within the source files.
 - Which fields, and in which order, can be set by the user. Everything else about the formatting is opinionated, and to change it you need to edit the code.
 - The script `example/example.jl` shows how to import the main script, how to use the main function, and provides a sanity check, as it should run without errors when using the .bibtex files provided in `example/example_bib_files`.
 - The dependencies are given by the `Manifest.toml` and `Project.toml` files.
@@ -36,14 +36,14 @@ Julia script to format and join .bib and .bibtex files.
 - The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution with the correct configuration, it should be able to display them directly without the curly brackets.
 - [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) will get confused if there is an space after `@article`, i.e. the entry stars as "@article {Author2025", and the entry will be ignored. Delete the spurious spaces manually.
 
-### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in garbage out.
+### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in garbage out
 
 ## 🛠️ Usage
 
 - Clone the project
 
 ```bash
- git clone https://github.com/Ezequiel92/BiblographyFormatter.git
+git clone https://github.com/Ezequiel92/BiblographyFormatter.git
 ```
 
 - Go to the project directory
@@ -55,7 +55,7 @@ cd path/to/BiblographyFormatter
 - Inside the Julia REPL install the dependencies specified by the `Manifest.toml` and `Project.toml` files
 
 ```julia
-(@v1.6) pkg> activate .
+(@v1.7) pkg> activate .
 
 (BiblographyFormatter) pkg> instantiate
 ```
