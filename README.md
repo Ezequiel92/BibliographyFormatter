@@ -11,7 +11,7 @@
         <a href="https://github.com/Ezequiel92/BiblographyFormatter/actions"><img src="https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F"></a>
         <a href="https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F"></a>
         <a href="https://www.codefactor.io/repository/github/ezequiel92/biblographyformatter"><img src="https://img.shields.io/codefactor/grade/github/ezequiel92/biblographyformatter?style=flat&logo=CodeFactor&labelColor=2B2D2F"></a>
-      <a href="mailto:elozano@df.uba.ar"><img src="https://img.shields.io/maintenance/yes/2021?style=flat"></a>
+      <a href="mailto:elozano@df.uba.ar"><img src="https://img.shields.io/maintenance/yes/2022?style=flat"></a>
 </p>
 
 <p align="center">
