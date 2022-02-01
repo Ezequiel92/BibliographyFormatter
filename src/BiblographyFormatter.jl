@@ -143,10 +143,12 @@ function journal_replace(journal::String)::String
 
     j_name = strip(lowercase(journal))
 
-    if j_name == "\\apj" || j_name == "apj"
+    if j_name in ["\\apj", "apj"]
         return "The Astrophysical Journal"
-    elseif j_name == "\\aap" || j_name == "aap"
+    elseif j_name in ["\\aap", "aap", "a&a"]
         return "Astronomy and Astrophysics"
+    elseif j_name in ["mnras"]
+        return "Monthly Notices of the Royal Astronomical Society"
     else
         return journal
     end
