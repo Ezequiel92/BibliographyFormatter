@@ -34,7 +34,7 @@ Julia script to format and join .bib and .bibtex files.
 - The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution with the correct configuration, it should be able to display them directly without the curly brackets.
 - [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) will get confused if there is an space after `@article`, i.e. the entry stars as "@article {Author2025", and the entry will be ignored. Delete the spurious spaces manually.
 
-### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in garbage out
+### ‼️ You should always check the resulting file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in garbage out.
 
 ## 🛠️ Usage
 
