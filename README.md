@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    <a href="https://open.vscode.dev/Ezequiel92/BiblographyFormatter"><img src="https://open.vscode.dev/badges/open-in-vscode.svg"></a>
+    <a href="https://github1s.com/Ezequiel92/BiblographyFormatter"><img src="https://img.shields.io/badge/preview%20in-vscode.dev-blue"></a>
 </p>
 
 Julia script to format and join .bib and .bibtex files.
