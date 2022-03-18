@@ -3,6 +3,7 @@
 </div>
 
 <p align="center">
+    <a href="https://github1s.com/Ezequiel92/BiblographyFormatter"><img src="http://forthebadge.com/images/badges/built-with-science.svg"></a>
     <a href="https://julialang.org"><img src="https://forthebadge.com/images/badges/made-with-julia.svg"></a>
 </p>
 
@@ -10,10 +11,6 @@
     <a href="https://codecov.io/github/Ezequiel92/BiblographyFormatter?branch=main"><img src="https://img.shields.io/codecov/c/github/Ezequiel92/BiblographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F"></a>
     <a href="https://github.com/Ezequiel92/BiblographyFormatter/actions"><img src="https://img.shields.io/github/workflow/status/Ezequiel92/BiblographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F"></a>
     <a href="https://github.com/Ezequiel92/BiblographyFormatter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Ezequiel92/BiblographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F"></a>
-</p>
-
-<p align="center">
-    <a href="https://github1s.com/Ezequiel92/BiblographyFormatter"><img src="https://img.shields.io/badge/preview%20in-vscode.dev-blue"></a>
 </p>
 
 Julia script to format and join .bib and .bibtex files.
