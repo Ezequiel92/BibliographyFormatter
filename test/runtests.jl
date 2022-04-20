@@ -24,8 +24,12 @@ using BiblographyFormatter, Test, ReferenceTests
 	@test BiblographyFormatter.month_replace("Dec.") == "12"
 	@test BiblographyFormatter.month_replace(" May") == "05"
 
-    # Test journal name replacement
-	@test BiblographyFormatter.journal_replace("\\apj") == "The Astrophysical Journal"
+    # Test journal name formatter
+	@test BiblographyFormatter.journal_name("\\apj") == "The Astrophysical Journal"
+    @test BiblographyFormatter.journal_name(
+        "Physical Review Letters", 
+        fullname = false,
+    ) == "\\prl"
 	
 	# Test main function
 	@test_reference "../example/output.bibtex" bib_formatter(source_path, fields)

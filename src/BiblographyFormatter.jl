@@ -13,6 +13,8 @@ if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optle
     @eval Base.Experimental.@optlevel 3
 end
 
+include("./journal_abbr.jl")
+
 """
 	format_name(name::String)::String
 
@@ -123,15 +125,18 @@ function month_replace(month::String)::String
 end
 
 """
-    journal_replace(journal::String)::String
+    journal_name(journal::String; <keyword arguments>)::String
 
-Replaces the abbreviated name of a journal with its full name.
+Journal name nicely formated. 
+
+If the name is not in the list given by the file ./journal_abbr.jl, `journal` is returned unmodified.
     
 # Arguments 
 - `journal::String`: Name of the journal as a string.
+- `fullname::Bool = true`: If the full name will be returned, if false, an abbreviation is returned.
 
 # Returns
-- The corresponding full name as a string. 
+- The corresponding name as a string. 
 
 # Example
 ```julia-repl
@@ -139,24 +144,24 @@ julia> month_replace("\apj")
 "The Astrophysical Journal"
 ```
 """
-function journal_replace(journal::String)::String
+function journal_name(journal::String; fullname::Bool = true)::String
 
-    j_name = strip(lowercase(journal))
+    j_name = lstrip(strip(lowercase(journal)), '\\')
 
-    if j_name in ["\\apj", "apj"]
-        return "The Astrophysical Journal"
-    elseif j_name in ["\\aap", "aap", "a&a"]
-        return "Astronomy and Astrophysics"
-    elseif j_name in ["mnras"]
-        return "Monthly Notices of the Royal Astronomical Society"
-    else
-        return journal
+    if fullname
+        if haskey(journal_abbreviations, j_name)
+            return journal_abbreviations[j_name]
+        end
+    elseif haskey(journal_fullnames, j_name)
+        return "\\" * journal_fullnames[j_name]
     end
+
+    return journal
 
 end
 
 """
-	bib_formatter(source_path::String, Vector{String})::String
+	bib_formatter(source_path::String, Vector{String}; <keyword arguments>)::String
 
 # Arguments 
 - `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
@@ -164,11 +169,17 @@ end
 - `fields::Vector{String}`: Ordered list of bibtex fields to be included in each entry. 
   If one field does not exist it will be ignored unless they are essential like the year 
   or the author. The order of the fields will be respected in the final output.
+- `journal_fullname::Bool = true`: If the full of the journals will be used, 
+  if false, an abbreviation is used instead.
 
 # Returns
 - A String with the joined bib data, already formatted and ready to be printed in a file.
 """
-function bib_formatter(source_path::String, fields::Vector{String})::String
+function bib_formatter(
+    source_path::String, 
+    fields::Vector{String}; 
+    journal_fullname::Bool = true,
+)::String
 
     # Import bibliography files from `source_path`
     file_list = glob("*.bibtex", source_path)
@@ -244,7 +255,10 @@ function bib_formatter(source_path::String, fields::Vector{String})::String
 
                 # Replace journal abbreviations with full name
                 if field == "journal"
-                    new_bib[key].fields[field] = journal_replace(new_bib[key].fields[field])
+                    new_bib[key].fields[field] = journal_name(
+                        new_bib[key].fields[field], 
+                        fullname = journal_fullname,
+                    )
                 end
 
                 # Add padding to the pages field
@@ -274,8 +288,8 @@ end
 
 precompile(format_name, (String,))
 precompile(month_replace, (String,))
-precompile(journal_replace, (String,))
-precompile(bib_formatter, (String, Vector{String}))
+precompile(journal_name, (String, Bool))
+precompile(bib_formatter, (String, Vector{String}, Bool))
 
 export bib_formatter
 
