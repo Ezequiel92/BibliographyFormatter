@@ -4,11 +4,15 @@
 
 module BiblographyFormatter
 
+using BibInternal
 using Bibliography
 using Glob
 using DataStructures
 using Accessors
 using Unicode
+
+# Maximum length of a field for padding of the final string
+const MAX_LENGHT = maximum(length.(string.(BibInternal.fields)))
 
 if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
     @eval Base.Experimental.@optlevel 3
@@ -214,9 +218,6 @@ function bib_formatter(
     # Now `new_bib[key].fields` contains all the data as strings
     export_bibtex(new_bib)
 
-    # Maximum length of a field for padding of the final string
-    max_lenght = maximum(length.(fields))
-
     out_str = ""
     for key in keys(new_bib)
         # Deletes empty fields.
@@ -270,7 +271,7 @@ function bib_formatter(
                 # Add fields to the string
                 out_str *=
                     "\t" *
-                    rpad(field, max_lenght) *
+                    rpad(field, MAX_LENGHT) *
                     " = {" *
                     new_bib[key].fields[field] *
                     "},\n"
