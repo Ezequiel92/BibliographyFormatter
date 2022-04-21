@@ -1,6 +1,6 @@
-############################################################################################
+####################################################################################################
 # Julia script to format and join .bib and .bibtex files
-############################################################################################
+####################################################################################################
 
 module BiblographyFormatter
 
@@ -8,6 +8,7 @@ using Bibliography
 using Glob
 using DataStructures
 using Accessors
+using Unicode
 
 if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
     @eval Base.Experimental.@optlevel 3
@@ -40,7 +41,7 @@ julia> format_name("Cena-Rock McMahon")
 function format_name(name::String)::String
 
     # Clean leading and trailing white spaces
-    clean_name = replace(replace(replace(strip(name), "{" => ""), "}" => ""), "~" => " ")
+    clean_name = replace(strip(name), "{" => "", "}" => "", "~" => " ")
 
     # If the string is empty or already correctly formatted, returned it unchanged
     if isempty(clean_name) || match(r"[A-Z]\.", clean_name) !== nothing
@@ -95,29 +96,29 @@ function month_replace(month::String)::String
     l_month = strip(lowercase(month), ['.', ' '])
 
     if l_month == "jan" || l_month == "january"
-        return string(1, pad = 2)
+        return string(1, pad=2)
     elseif l_month == "feb" || l_month == "february"
-        return string(2, pad = 2)
+        return string(2, pad=2)
     elseif l_month == "mar" || l_month == "march"
-        return string(3, pad = 2)
+        return string(3, pad=2)
     elseif l_month == "apr" || l_month == "april"
-        return string(4, pad = 2)
+        return string(4, pad=2)
     elseif l_month == "may" || l_month == "may"
-        return string(5, pad = 2)
+        return string(5, pad=2)
     elseif l_month == "jun" || l_month == "june"
-        return string(6, pad = 2)
+        return string(6, pad=2)
     elseif l_month == "jul" || l_month == "july"
-        return string(7, pad = 2)
+        return string(7, pad=2)
     elseif l_month == "aug" || l_month == "august"
-        return string(8, pad = 2)
+        return string(8, pad=2)
     elseif l_month == "sep" || l_month == "september"
-        return string(9, pad = 2)
+        return string(9, pad=2)
     elseif l_month == "oct" || l_month == "october"
-        return string(10, pad = 2)
+        return string(10, pad=2)
     elseif l_month == "nov" || l_month == "november"
-        return string(11, pad = 2)
+        return string(11, pad=2)
     elseif l_month == "dec" || l_month == "december"
-        return string(12, pad = 2)
+        return string(12, pad=2)
     else
         return month
     end
@@ -144,7 +145,7 @@ julia> month_replace("\apj")
 "The Astrophysical Journal"
 ```
 """
-function journal_name(journal::String; fullname::Bool = true)::String
+function journal_name(journal::String; fullname::Bool=true)::String
 
     j_name = lstrip(strip(lowercase(journal)), '\\')
 
@@ -176,9 +177,9 @@ end
 - A String with the joined bib data, already formatted and ready to be printed in a file.
 """
 function bib_formatter(
-    source_path::String, 
-    fields::Vector{String}; 
-    journal_fullname::Bool = true,
+    source_path::String,
+    fields::Vector{String};
+    journal_fullname::Bool=true
 )::String
 
     # Import bibliography files from `source_path`
@@ -204,7 +205,7 @@ function bib_formatter(
         for (i, author) in enumerate(new_bib[key].authors)
             author = @set author.first = format_name(author.first)
             author = @set author.middle = format_name(author.middle)
-            author = @set author.last = replace(replace(author.last, "{" => ""), "}" => "")
+            author = @set author.last = replace(author.last, "{" => "", "}" => "")
             new_bib[key].authors[i] = @set author.junior = format_name(author.junior)
         end
     end
@@ -224,14 +225,11 @@ function bib_formatter(
         # Available fields
         available = keys(new_bib[key].fields)
 
-        # Constructs the entry name as {surname}{year}
+        # Constructs the entry name as {surname}{year}, striping diacritical marks (e.g. accents)
         surname = new_bib[key].authors[1].last
         year = new_bib[key].date.year
-        if "isbn" in available
-            out_str *= "@book{" * surname * year * ",\n"
-        else
-            out_str *= "@article{" * surname * year * ",\n"
-        end
+        type = new_bib[key].type
+        out_str *= "@$type{" * Unicode.normalize(surname * year, stripmark=true) * ",\n"
 
         # Constructs the correct URL from the "doi" field if possible
         if "doi" in available
@@ -244,7 +242,7 @@ function bib_formatter(
                 # Clean white spaces and spurious curly brackets from the title
                 if field == "title"
                     new_title = strip(new_bib[key].fields[field], ['{', '}', ' '])
-                    new_title = replace(replace(new_title, "{" => ""), "}" => "")
+                    new_title = replace(new_title, "{" => "", "}" => "")
                     new_bib[key].fields[field] = new_title
                 end
 
@@ -253,11 +251,11 @@ function bib_formatter(
                     new_bib[key].fields[field] = month_replace(new_bib[key].fields[field])
                 end
 
-                # Replace journal abbreviations with full name
+                # Format journal name
                 if field == "journal"
                     new_bib[key].fields[field] = journal_name(
-                        new_bib[key].fields[field], 
-                        fullname = journal_fullname,
+                        new_bib[key].fields[field],
+                        fullname=journal_fullname,
                     )
                 end
 
@@ -280,6 +278,14 @@ function bib_formatter(
         end
 
         # Final formatting of the string.
+		out_str = replace(
+            out_str, 
+            "Á" => "{\\'A}", 
+            "É" => "{\\'E}", 
+            "Í" => "{\\'I}", 
+            "Ó" => "{\\'O}", 
+            "Ú" => "{\\'U}",
+        )
         out_str = out_str[1:(end-2)] * "\n}\n\n"
     end
 
