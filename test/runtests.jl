@@ -1,5 +1,5 @@
 push!(LOAD_PATH, "./src/")
-using BiblographyFormatter, Test, ReferenceTests
+using BibliographyFormatter, Test, ReferenceTests
 
 @testset "Unit Conversion" begin
 
@@ -14,18 +14,18 @@ using BiblographyFormatter, Test, ReferenceTests
     source_path = joinpath(@__DIR__, "../example/example_bib_files")
 
     # Test name formatting
-    @test BiblographyFormatter.format_name("Cena-Rock") == "C.-R."
-    @test BiblographyFormatter.format_name("Cena-Rock McMahon") == "C.-R. M."
-    @test BiblographyFormatter.format_name("Albert Einstein") == "A. E."
+    @test BibliographyFormatter.format_name("Cena-Rock") == "C.-R."
+    @test BibliographyFormatter.format_name("Cena-Rock McMahon") == "C.-R. M."
+    @test BibliographyFormatter.format_name("Albert Einstein") == "A. E."
 
     # Test month convertion
-    @test BiblographyFormatter.month_replace("jan") == "01"
-    @test BiblographyFormatter.month_replace("Dec.") == "12"
-    @test BiblographyFormatter.month_replace(" May") == "05"
+    @test BibliographyFormatter.month_replace("jan") == "01"
+    @test BibliographyFormatter.month_replace("Dec.") == "12"
+    @test BibliographyFormatter.month_replace(" May") == "05"
 
     # Test journal name formatting
-    @test BiblographyFormatter.journal_name("\\apj") == "The Astrophysical Journal"
-    @test BiblographyFormatter.journal_name(
+    @test BibliographyFormatter.journal_name("\\apj") == "The Astrophysical Journal"
+    @test BibliographyFormatter.journal_name(
         "Physical Review Letters",
         fullname=false,
     ) == "\\prl"

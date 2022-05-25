@@ -2,7 +2,7 @@
 # Julia script to format and join .bib and .bibtex files
 ####################################################################################################
 
-module BiblographyFormatter
+module BibliographyFormatter
 
 using BibInternal
 using Bibliography

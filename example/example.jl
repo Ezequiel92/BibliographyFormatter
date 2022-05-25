@@ -1,10 +1,10 @@
 ####################################################################################################
-# Example script for BiblographyFormatter.jl
+# Example script for BibliographyFormatter.jl
 # It can be run as is, and it shouldn't throw any errors
 ####################################################################################################
 
 push!(LOAD_PATH, "./src/")
-using BiblographyFormatter
+using BibliographyFormatter
 
 ####################################################################################################
 # Configuration variables

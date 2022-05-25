@@ -1,4 +1,4 @@
-name = "BiblographyFormatter"
+name = "BibliographyFormatter"
 uuid = "91f7aba4-367b-4835-989d-2698667baec2"
 
 [deps]
