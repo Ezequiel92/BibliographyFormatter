@@ -1,4 +1,4 @@
-name: Continuous integration
+name: Run tests
 
 on: [push, pull_request]
 
