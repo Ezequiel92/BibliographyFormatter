@@ -206,7 +206,7 @@ function bib_formatter(
 
     # Format the names of the authors
     for key in keys(new_bib)
-        for (i, author) in enumerate(new_bib[key].authors)
+        for (i, author) in pairs(new_bib[key].authors)
             author = @set author.first = format_name(author.first)
             author = @set author.middle = format_name(author.middle)
             author = @set author.last = replace(author.last, "{" => "", "}" => "")
