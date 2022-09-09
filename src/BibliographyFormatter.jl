@@ -21,23 +21,27 @@ end
 include("./journal_abbr.jl")
 
 """
-	format_name(name::String)::String
+    format_name(name::String)::String
 
 Format and clean the authors' first and middle names.
 
-Ignores leading and trailing white spaces and empty strings, and keeps 
+Ignores leading and trailing white spaces and empty strings, and keeps
 together words separated by '-'.
-	
-# Arguments 
-- `name::String`: String to be formatted.
+
+# Arguments
+
+  - `name::String`: String to be formatted.
 
 # Returns
-- The input string with only the first letter of every word left, each ending with a dot. 
+
+  - The input string with only the first letter of every word left, each ending with a dot.
 
 # Example
+
 ```julia-repl
 julia> format_name("Cena-Rock")
 "C.-R."
+
 julia> format_name("Cena-Rock McMahon")
 "C.-R. M."
 ```
@@ -54,16 +58,13 @@ function format_name(name::String)::String
 
     # Split the string when ' ' and '-' appear
     # Replace every word with its first letter ending with a dot
-    elements = [
-        [first(atom) * '.' for atom in split(word, '-')] for
-        word in split(clean_name, ' ')
-    ]
+    elements = [[first(atom) * '.' for atom in split(word, '-')] for word in split(clean_name, ' ')]
 
     # Construct the output, adding again the ' ' and '-'
     final = ""
     for element in elements
         if length(element) > 1
-            for i = 1:(length(element)-1)
+            for i in 1:(length(element) - 1)
                 final *= (element[i] * '-')
             end
         end
@@ -71,6 +72,7 @@ function format_name(name::String)::String
     end
 
     return strip(final)
+
 end
 
 
@@ -78,19 +80,23 @@ end
     month_replace(month::String)::String
 
 Replaces the name of the month with its corresponding number.
-    
-# Arguments 
-- `month::String`: Name of the month as a string. It can have a point or space at the end 
-or beginning, any letter can be in upper or lower case and the full name or the common three 
-letter abbreviation can be used.
+
+# Arguments
+
+  - `month::String`: Name of the month as a string. It can have a point or space at the end
+    or beginning, any letter can be in upper or lower case and the full name or the common three
+    letter abbreviation can be used.
 
 # Returns
-- The corresponding number as a string. 
+
+  - The corresponding number as a string.
 
 # Example
+
 ```julia-repl
 julia> month_replace("jan")
 "01"
+
 julia> format_name("Dec.")
 "12"
 ```
@@ -132,18 +138,21 @@ end
 """
     journal_name(journal::String; <keyword arguments>)::String
 
-Journal name nicely formated. 
+Journal name nicely formated.
 
 If the name is not in the list given by the file ./journal_abbr.jl, `journal` is returned unmodified.
-    
-# Arguments 
-- `journal::String`: Name of the journal as a string.
-- `fullname::Bool = true`: If the full name will be returned, if false, an abbreviation is returned.
+
+# Arguments
+
+  - `journal::String`: Name of the journal as a string.
+  - `fullname::Bool = true`: If the full name will be returned, if false, an abbreviation is returned.
 
 # Returns
-- The corresponding name as a string. 
+
+  - The corresponding name as a string.
 
 # Example
+
 ```julia-repl
 julia> month_replace("\apj")
 "The Astrophysical Journal"
@@ -166,24 +175,26 @@ function journal_name(journal::String; fullname::Bool=true)::String
 end
 
 """
-	bib_formatter(source_path::String, Vector{String}; <keyword arguments>)::String
+    bib_formatter(source_path::String, Vector{String}; <keyword arguments>)::String
 
-# Arguments 
-- `source_path::String`: Path to the .bib and .bibtex files. The final order of the 
-  entries in the output may not be the order of the files in the source directory.
-- `fields::Vector{String}`: Ordered list of bibtex fields to be included in each entry. 
-  If one field does not exist it will be ignored unless they are essential like the year 
-  or the author. The order of the fields will be respected in the final output.
-- `journal_fullname::Bool = true`: If the full of the journals will be used, 
-  if false, an abbreviation is used instead.
+# Arguments
+
+  - `source_path::String`: Path to the .bib and .bibtex files. The final order of the
+    entries in the output may not be the order of the files in the source directory.
+  - `fields::Vector{String}`: Ordered list of bibtex fields to be included in each entry.
+    If one field does not exist it will be ignored unless they are essential like the year
+    or the author. The order of the fields will be respected in the final output.
+  - `journal_fullname::Bool = true`: If the full of the journals will be used,
+    if false, an abbreviation is used instead.
 
 # Returns
-- A String with the joined bib data, already formatted and ready to be printed in a file.
+
+  - A String with the joined bib data, already formatted and ready to be printed in a file.
 """
 function bib_formatter(
     source_path::String,
     fields::Vector{String};
-    journal_fullname::Bool=true
+    journal_fullname::Bool=true,
 )::String
 
     # Import bibliography files from `source_path`
@@ -255,7 +266,7 @@ function bib_formatter(
                 # Format journal name
                 if field == "journal"
                     new_bib[key].fields[field] = journal_name(
-                        new_bib[key].fields[field],
+                        new_bib[key].fields[field], 
                         fullname=journal_fullname,
                     )
                 end
@@ -269,25 +280,20 @@ function bib_formatter(
                 end
 
                 # Add fields to the string
-                out_str *=
-                    "\t" *
-                    rpad(field, MAX_LENGHT) *
-                    " = {" *
-                    new_bib[key].fields[field] *
-                    "},\n"
+                out_str *= "\t" * rpad(field, MAX_LENGHT) * " = {" * new_bib[key].fields[field] * "},\n"
             end
         end
 
         # Final formatting of the string.
-		out_str = replace(
-            out_str, 
-            "Á" => "{\\'A}", 
-            "É" => "{\\'E}", 
-            "Í" => "{\\'I}", 
-            "Ó" => "{\\'O}", 
+        out_str = replace(
+            out_str,
+            "Á" => "{\\'A}",
+            "É" => "{\\'E}",
+            "Í" => "{\\'I}",
+            "Ó" => "{\\'O}",
             "Ú" => "{\\'U}",
         )
-        out_str = out_str[1:(end-2)] * "\n}\n\n"
+        out_str = out_str[1:(end - 2)] * "\n}\n\n"
     end
 
     return out_str

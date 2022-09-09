@@ -5,9 +5,24 @@ using BibliographyFormatter, Test, ReferenceTests
 
     # Fields to be included
     fields = [
-        "title", "booktitle", "author", "publisher", "institution",
-        "address", "place", "collection", "series", "edition", "journal",
-        "volume", "number", "pages", "year", "month", "url", "isbn",
+        "title",
+        "booktitle",
+        "author",
+        "publisher",
+        "institution",
+        "address",
+        "place",
+        "collection",
+        "series",
+        "edition",
+        "journal",
+        "volume",
+        "number",
+        "pages",
+        "year",
+        "month",
+        "url",
+        "isbn",
     ]
 
     # Path to the source files
@@ -25,10 +40,7 @@ using BibliographyFormatter, Test, ReferenceTests
 
     # Test journal name formatting
     @test BibliographyFormatter.journal_name("\\apj") == "The Astrophysical Journal"
-    @test BibliographyFormatter.journal_name(
-        "Physical Review Letters",
-        fullname=false,
-    ) == "\\prl"
+    @test BibliographyFormatter.journal_name("Physical Review Letters", fullname=false) == "\\prl"
 
     # Test main function
     @test_reference "../example/output.bibtex" bib_formatter(source_path, fields)

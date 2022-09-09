@@ -13,9 +13,24 @@ using BibliographyFormatter
 # Which fields will appear in the end result. The order indicated here will be respected
 # If some non-essential fields don't exist in the source files, they will be ignored
 fields = [
-    "title", "booktitle", "author", "publisher", "institution",
-    "address", "place", "collection", "series", "edition", "journal",
-    "volume", "number", "pages", "year", "month", "url", "isbn",
+    "title",
+    "booktitle",
+    "author",
+    "publisher",
+    "institution",
+    "address",
+    "place",
+    "collection",
+    "series",
+    "edition",
+    "journal",
+    "volume",
+    "number",
+    "pages",
+    "year",
+    "month",
+    "url",
+    "isbn",
 ]
 
 # Path to the source files
