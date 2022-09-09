@@ -2,6 +2,10 @@ name: Run tests
 
 on: [push, pull_request]
 
+concurrency:
+    group: run_tests
+    cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
