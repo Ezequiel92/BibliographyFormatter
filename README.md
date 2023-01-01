@@ -9,7 +9,7 @@
 
 <p align="center">
     <a href="https://codecov.io/github/ezequiel92/BibliographyFormatter?branch=main"><img src="https://img.shields.io/codecov/c/github/ezequiel92/BibliographyFormatter?style=flat&logo=Codecov&labelColor=2B2D2F"></a>
-    <a href="https://github.com/ezequiel92/BibliographyFormatter/actions"><img src="https://img.shields.io/github/workflow/status/ezequiel92/BibliographyFormatter/Continuous%20integration?style=flat&logo=GitHub&labelColor=2B2D2F"></a>
+    <a href="https://github.com/ezequiel92/BibliographyFormatter/actions"><img src="https://img.shields.io/github/actions/workflow/status/ezequiel92/BibliographyFormatter/run_tests.yml?logo=GitHub"></a>
     <a href="https://github.com/ezequiel92/BibliographyFormatter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ezequiel92/BibliographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F"></a>
 </p>
 
