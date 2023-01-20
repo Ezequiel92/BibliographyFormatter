@@ -240,7 +240,7 @@ function bib_formatter(
         # Constructs the entry name as {surname}{year}, striping diacritical marks (e.g. accents)
         surname = new_bib[key].authors[1].last
         year = new_bib[key].date.year
-        type = new_bib[key].type
+        type = new_bib[key].type == "eprint" ? "article" : new_bib[key].type
         out_str *= "@$type{" * Unicode.normalize(surname * year, stripmark=true) * ",\n"
 
         # Constructs the correct URL from the "doi" field if possible
