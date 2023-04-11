@@ -22,16 +22,16 @@ Julia script to format and append .bib and .bibtex files.
 
 ## ℹ️ Some things to note
 
-- This is just a script inside a module. It defines four functions (only one of which is exported), and one global variable.
+- This is just a script inside a module. It defines four functions (only one of which is exported), and two global variable.
 - It supports only the entries that [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) supports (you can find a list [here](https://humans-of-julia.github.io/Bibliography.jl/stable/internal/#BibInternal.entries)), so other types of entries must be renamed manually.
 - Only fields recognized by [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) can be used (you can find a list [here](https://humans-of-julia.github.io/Bibliography.jl/stable/internal/#BibInternal.fields)), i.e. if a field in the argument `fields` is not recognized, it will be ignored.
-- It reformats every author's first name to a single letter followed by a dot, e.g. Albert Einstein -> Einstein, A.
+- It formats every author's name to a single letter followed by a dot, e.g. Albert Einstein -> Einstein, A. The name parsing in made by [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl).
 - If a DOI and an URL are present, the DOI takes precedent over the URL.
 - If there is more than one entry with the same first author and the same year, the key will be the same. This has to be corrected manually.
-- The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution with the correct configuration, it should be able to display such symbols directly without the curly brackets. The only exception are accented upper vowels (e.g. Á), which are always replace by their special LaTeX form (e.g. `{\'A}`).
+- The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution, it should be able to display such symbols directly without the curly brackets. The only exception are accented upper vowels (e.g. Á), which are always replace by their special LaTeX form (e.g. `{\'A}`).
 - [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) will get confused if there is an space after `@article`, i.e. the entry stars as "@article {Author2025", and the entry will be ignored. Delete the spurious spaces manually.
 
-### ‼️ You should always check the final file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in garbage out
+### ‼️ You should always check the final file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in -> garbage out.
 
 ## 🛠️ Usage
 
@@ -50,7 +50,7 @@ cd path/to/BibliographyFormatter
 - Inside the Julia REPL install the dependencies specified by the `Project.toml` file
 
 ```julia
-(@v1.7) pkg> activate .
+(@v1.8) pkg> activate .
 
 (BibliographyFormatter) pkg> instantiate
 ```
