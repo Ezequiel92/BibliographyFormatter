@@ -49,7 +49,7 @@ cd path/to/BibliographyFormatter
 - Inside the Julia REPL install the dependencies specified by the `Project.toml` file
 
 ```julia
-(@v1.8) pkg> activate .
+(@v1.9) pkg> activate .
 
 (BibliographyFormatter) pkg> instantiate
 ```

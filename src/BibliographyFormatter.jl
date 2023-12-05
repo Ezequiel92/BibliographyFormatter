@@ -212,9 +212,6 @@ function bib_formatter(
         merge!(new_bib, import_bibtex(file))
     end
 
-    # Sort the entries with the default order, i.e. using the BibTeX keys or `:id`
-    sort_bibliography!(new_bib)
-
     # Format the names of the authors
     for key in keys(new_bib)
         for (i, author) in pairs(new_bib[key].authors)
@@ -224,6 +221,9 @@ function bib_formatter(
             new_bib[key].authors[i] = @set author.junior = format_name(author.junior)
         end
     end
+
+    # Sort the entries based on :authors, :editors, :date and :title; in that order
+    sort_bibliography!(new_bib, :nyt)
 
     # Constructs the dictionary for every entry with all the available data
     # Now `new_bib[key].fields` contains all the data as strings
@@ -266,7 +266,7 @@ function bib_formatter(
                 # Format journal name
                 if field == "journal"
                     new_bib[key].fields[field] = journal_name(
-                        new_bib[key].fields[field], 
+                        new_bib[key].fields[field],
                         fullname=journal_fullname,
                     )
                 end
