@@ -12,6 +12,9 @@
     <a href="https://github.com/ezequiel92/BibliographyFormatter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ezequiel92/BibliographyFormatter?style=flat&logo=GNU&labelColor=2B2D2F"></a>
 </p>
 
+> [!CAUTION]
+> This code is written for my personal use and may break at any moment. So, use it at your own risk.
+
 Julia script to format and append .bib and .bibtex files.
 
 - As a result of running the script, a single .bibtex file will be produced, containing every entry present within the source files.
@@ -30,7 +33,8 @@ Julia script to format and append .bib and .bibtex files.
 - The parser may get confused by special escaped symbols, i.e. `{symbol}`, introducing spurious white spaces. My recommendation is to avoid them, as if you are using a modern LaTeX distribution, it should be able to display such symbols directly without the curly brackets. The only exception are accented upper vowels (e.g. Á), which are always replace by their special LaTeX form (e.g. `{\'A}`).
 - [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl) will get confused if there is an space after `@article`, i.e. the entry stars as "@article {Author2025", and the entry will be ignored. Delete the spurious spaces manually.
 
-### ‼️ You should always check the final file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in -> garbage out.
+> [!CAUTION]
+> You should always check the final file for mistakes or missing data. The goal of the script is to format the entries, so incorrect or invalid data in the source files may produce no warning. Garbage in -> garbage out.
 
 ## 🛠️ Usage
 
@@ -83,7 +87,3 @@ julia> include("example/example.jl")
 Each function is documented within the script, where a docstring explains the functionality, the arguments, and the returns.
 
 For an example on how to use the main function `bib_formatter` refer to `example/example.jl`.
-
-## ⚠️ Warning
-
-This code is written for my personal use and may break at any moment. So, use it at your own risk.
