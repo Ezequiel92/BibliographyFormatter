@@ -1,6 +1,6 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.10.3"
+julia_version = "1.10.4"
 manifest_format = "2.0"
 project_hash = "db280b834da34245162fcc705dfba119a578eee1"
 
@@ -330,9 +330,9 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
 [[deps.YAML]]
 deps = ["Base64", "Dates", "Printf", "StringEncodings"]
-git-tree-sha1 = "669a78c59a307fa3ebc0a0bffd7ae83bd2184361"
+git-tree-sha1 = "80c3218f29cbc47111ac87e7be5e69cc05c6dd36"
 uuid = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
-version = "0.4.10"
+version = "0.4.11"
 
 [[deps.Zlib_jll]]
 deps = ["Libdl"]
