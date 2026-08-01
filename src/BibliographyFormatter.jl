@@ -225,9 +225,24 @@ function bib_formatter(
     # Sort the entries based on :authors, :editors, :date and :title; in that order
     sort_bibliography!(new_bib, :nyt)
 
-    # Constructs the dictionary for every entry with all the available data
-    # Now `new_bib[key].fields` contains all the data as strings
-    export_bibtex(new_bib)
+    # Constructs the dictionary for every entry with all the available data.
+    for key in keys(new_bib)
+
+        entry = new_bib[key]
+
+        Bibliography.access_to_bibtex!(entry.fields, entry.access)
+        entry.fields["author"]    = Bibliography.names_to_strings(entry.authors)
+        entry.fields["booktitle"] = entry.booktitle
+
+        Bibliography.date_to_bibtex!(entry.fields, entry.date)
+        entry.fields["editor"] = Bibliography.names_to_strings(entry.editors)
+
+        Bibliography.eprint_to_bibtex!(entry.fields, entry.eprint)
+        Bibliography.in_to_bibtex!(entry.fields, entry.in)
+        entry.fields["note"]  = entry.note
+        entry.fields["title"] = entry.title
+
+    end
 
     out_str = ""
     for key in keys(new_bib)
